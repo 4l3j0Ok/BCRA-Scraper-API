@@ -1,2 +1,14 @@
-# Web scraping strategy:
-# https://www.bcra.gob.ar/SistemasFinancierosYdePagos/Sistema_financiero_nomina_de_entidades.asp?bco=AAA00&tipo=1
+from modules import soup
+import config
+import json
+
+
+if __name__ == "__main__":
+    url = config.URL
+    data = soup.get_table_from_page(url)
+    print(json.dumps(
+            data,
+            ensure_ascii=False,
+            indent=2
+        )
+    )
