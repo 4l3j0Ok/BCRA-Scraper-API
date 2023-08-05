@@ -43,7 +43,7 @@ async def update_banks_list() -> Success:
     return Success(
         input=None,
         detail=Detail(
-            payload={"id": str(result)},
+            payload={"ids": result},
             message=messages.MSG_SUCCESS_SAVE
         )
     )

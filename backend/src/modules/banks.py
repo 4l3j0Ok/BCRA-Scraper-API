@@ -21,5 +21,6 @@ def get_banks(id: str = None):
 
 def update_banks():
     data = soup.get_table_from_page(config.BCRA_URL)
+    db.delete_many({})
     result = db.insert_many(data)
-    return True, result
+    return True, [str(id) for id in result.inserted_ids]
