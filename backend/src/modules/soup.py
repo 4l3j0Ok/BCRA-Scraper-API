@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
+
 def get_table_from_page(url):
     try:
         content = requests.get(url).content
@@ -11,7 +12,7 @@ def get_table_from_page(url):
             aux = {}
             if str(td[0].string) == "None":
                 continue
-            aux["id"] = str(td[0].string).title()
+            aux["bcra_id"] = str(td[0].string).title()
             aux["label"] = str(td[1].string).title()
             data.append(aux)
         return data
