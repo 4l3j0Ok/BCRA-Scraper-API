@@ -8,3 +8,4 @@ BCRA_URL = "https://www.bcra.gob.ar/SistemasFinancierosYdePagos/Sistema_financie
 ROUTERS = [
     "banks"
 ]
+LOG_PATH = "/var/log/app.log"
