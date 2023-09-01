@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
-import modules.banks as functions
-from models.banks import Bank, Success, Detail
+import modules.bank as functions
+from models.response import Success, Detail
 from modules import messages
 
 

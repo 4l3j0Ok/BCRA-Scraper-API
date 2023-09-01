@@ -1,7 +1,6 @@
 from modules import soup, messages, config
 from modules.logger import logger
-from models.banks import Bank
-from pydantic import ValidationError
+from models.bank import Bank
 from db.client import client
 from bson import ObjectId
 
