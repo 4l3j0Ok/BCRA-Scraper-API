@@ -1,3 +1,3 @@
-# Mi Tarjetero
+# B(s)CRApper API
 
-Proyecto nacido en base a un trabajo práctico de UX/UI 🖤
+
