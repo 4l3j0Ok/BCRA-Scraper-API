@@ -1,3 +1,1 @@
-# B(s)CRApper API
-
-
+# BCRA Scraper API
