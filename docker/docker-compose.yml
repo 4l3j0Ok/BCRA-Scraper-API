@@ -17,8 +17,6 @@ services:
   mongo:
     image: mongo:6.0.8
     restart: on-failure
-    ports:
-      - 27018:27017
     env_file:
       - mongo.env
     volumes:
