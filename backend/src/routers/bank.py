@@ -8,9 +8,9 @@ router = APIRouter()
 
 
 @router.get("/")
-async def get_banks(id: str = None) -> Success:
+async def get_banks(bank_id: str = None) -> Success:
     "Retorna la lista de bancos o un usuario concreto en base al id."
-    success, result = functions.get_banks(id)
+    success, result = functions.get_banks(bank_id)
     if not success:
         raise HTTPException(
             status_code=404,
@@ -20,7 +20,7 @@ async def get_banks(id: str = None) -> Success:
             )
         )
     return Success(
-        input=id if id else None,
+        input=bank_id if bank_id else None,
         detail=Detail(
             payload=result,
             message=messages.MSG_SUCCESS_GENERIC

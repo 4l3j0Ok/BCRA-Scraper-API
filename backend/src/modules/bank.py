@@ -8,14 +8,14 @@ from bson import ObjectId
 db = client.local.banks
 
 
-def get_banks(id: str = None):
-    logger.info(f"Validando ID {id}.")
-    if id:
-        if not ObjectId.is_valid(id):
-            logger.warning(f"ID {id} inválido.")
+def get_banks(bank_id: str = None):
+    logger.info(f"Validando ID {bank_id}.")
+    if bank_id:
+        if not ObjectId.is_valid(bank_id):
+            logger.warning(f"ID {bank_id} inválido.")
             return False, messages.ERR_SCHEMA.format(err_args="id")
     logger.info("Buscando bancos en la DB.")
-    result = list(db.find({"_id":ObjectId(id)} if id else None))
+    result = list(db.find({"_id":ObjectId(bank_id)} if bank_id else None))
     if not result:
         return False, messages.ERR_BANK_NOT_FOUND
     banks = [Bank(**bank) for bank in result]
@@ -27,4 +27,4 @@ def update_banks():
     data = soup.get_table_from_page(config.BCRA_URL)
     db.delete_many({})
     result = db.insert_many(data)
-    return True, [str(id) for id in result.inserted_ids]
+    return True, [str(bank_id) for bank_id in result.inserted_ids]
