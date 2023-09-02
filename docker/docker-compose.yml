@@ -2,8 +2,7 @@ version: "3.9"
 services:
 
   backend:
-    build:
-      context: ../backend
+    image: alejoide/bcra-scraper-api:1.0.0
     restart: on-failure
     ports:
       - 8080:8080
