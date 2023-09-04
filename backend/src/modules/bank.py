@@ -1,6 +1,6 @@
 from modules import soup, messages, config
 from modules.logger import logger
-from models.bank import Bank, BankWithID
+from models.bank import BankWithID
 from db.client import client
 from bson import ObjectId
 

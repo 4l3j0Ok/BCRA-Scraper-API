@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 import modules.bank as functions
 from models.response import Success, Detail
 from modules import messages
-from models.bank import Bank, BankWithID
+from models.bank import Bank
 
 
 router = APIRouter()
