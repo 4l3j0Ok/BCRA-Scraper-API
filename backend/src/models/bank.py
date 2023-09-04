@@ -3,6 +3,11 @@ from bson import ObjectId
 
 
 class Bank(BaseModel):
+    label: str
+    bcra_id: str
+
+
+class BankWithID(BaseModel):
     id: str | None
     label: str
     bcra_id: str

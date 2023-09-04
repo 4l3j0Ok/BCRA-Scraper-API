@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def get_table_from_page(url):
+def get_banks_from_url(url):
     try:
         content = requests.get(url).content
         soup = BeautifulSoup(content, "html.parser")
