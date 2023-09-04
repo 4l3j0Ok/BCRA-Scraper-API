@@ -10,4 +10,4 @@ logging.basicConfig(
     datefmt = '%d/%m/%Y %H:%M:%S'
 )
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("uvicorn.error")
