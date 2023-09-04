@@ -5,7 +5,11 @@ from modules import config
 from modules.logger import logger
 
 
-app = FastAPI()
+app = FastAPI(
+    title=config.APP_TITLE,
+    description=config.APP_DESCRIPTION,
+    version=config.APP_VERSION
+)
 
 
 for module in config.ROUTERS:

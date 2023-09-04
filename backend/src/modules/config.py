@@ -11,3 +11,7 @@ ROUTERS = [
     "bank"
 ]
 LOG_PATH = "/var/log/app.log"
+
+APP_TITLE = "BCRA Scraper API"
+APP_DESCRIPTION = "API de bancos."
+APP_VERSION = "v1.0.1"
