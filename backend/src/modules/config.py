@@ -1,7 +1,7 @@
 import os
 
-APP_HOST = os.getenv("APP_HOST")
-APP_PORT = int(os.getenv("APP_PORT"))
+APP_HOST = os.getenv("APP_HOST", "localhost")
+APP_PORT = int(os.getenv("APP_PORT", "8080"))
 MONGO_HOST = os.getenv("MONGO_HOST")
 MONGO_PORT = int(os.getenv("MONGO_PORT"))
 MONGO_USER = os.getenv("MONGO_USER")
