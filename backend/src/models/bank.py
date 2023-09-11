@@ -7,10 +7,8 @@ class Bank(BaseModel):
     bcra_id: str
 
 
-class BankWithID(BaseModel):
+class BankDB(Bank):
     id: str | None
-    label: str
-    bcra_id: str
 
     def __init__(self, **bank):
         if "_id" in bank and isinstance(bank["_id"], ObjectId):
