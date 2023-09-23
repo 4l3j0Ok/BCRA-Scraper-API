@@ -1,6 +1,6 @@
 __pycache__/
 *.pyc
 venv/
-docker/data/
+deploy/data/
 *.env
 todo.md
