@@ -14,3 +14,8 @@ class BankDB(Bank):
         if "_id" in bank and isinstance(bank["_id"], ObjectId):
             bank["id"] = str(bank["_id"])
         super().__init__(**bank)
+
+
+class AdminCredentials(BaseModel):
+    username: str
+    password: str

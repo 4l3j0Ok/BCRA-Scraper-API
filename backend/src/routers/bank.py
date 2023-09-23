@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 import modules.bank as functions
 from models.response import Success, Detail
 from modules import messages
-from models.bank import Bank
+from models.bank import Bank, AdminCredentials
 
 
 router = APIRouter()
@@ -30,8 +30,16 @@ async def get(bank_id: str = None) -> Success:
 
 
 @router.post("/update")
-async def update_banks_list() -> Success:
+async def update_banks_list(credentials: AdminCredentials) -> Success:
     "Actualiza la lista de bancos en la base de datos usando Web Scraping."
+    if not functions.validate_admin(credentials):
+        raise HTTPException(
+            status_code=401,
+            detail=Detail(
+                payload=None,
+                message=messages.MSG_ERROR_UNAUTHORIZED
+            )
+        )
     success, result = functions.update_banks()
     if not success:
         raise HTTPException(
@@ -51,8 +59,16 @@ async def update_banks_list() -> Success:
 
 
 @router.post("/add")
-def add_bank(bank: Bank) -> Success:
+def add_bank(bank: Bank, credentials: AdminCredentials) -> Success:
     "Agrega el banco indicado."
+    if not functions.validate_admin(credentials):
+        raise HTTPException(
+            status_code=401,
+            detail=Detail(
+                payload=None,
+                message=messages.MSG_ERROR_UNAUTHORIZED
+            )
+        )
     success, result = functions.add_bank(bank)
     if not success:
         raise HTTPException(

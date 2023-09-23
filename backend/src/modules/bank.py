@@ -3,6 +3,7 @@ from modules.logger import logger
 from models.bank import BankDB
 from db.client import client
 from bson import ObjectId
+import os
 
 
 db = client.local.banks
@@ -35,3 +36,11 @@ def add_bank(bank):
     logger.info("Agregando un nuevo banco...")
     result = db.insert_one(bank.dict())
     return True, str(result.inserted_id)
+
+
+def validate_admin(credentials):
+    if not credentials.username == os.getenv("ADMIN_USER"):
+        return False
+    if not credentials.password == os.getenv("ADMIN_PASS"):
+        return False
+    return True
