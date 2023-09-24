@@ -6,7 +6,7 @@ from bson import ObjectId
 import os
 
 
-db = client.local.banks
+db = client.bcra_scraper.banks
 
 
 def get_banks(bank_id: str = None):
