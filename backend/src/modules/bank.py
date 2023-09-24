@@ -9,7 +9,7 @@ import os
 db = client.bcra_scraper.banks
 
 
-def get_banks(bank_id: str = None):
+def get_banks(bank_id: str = None, as_dict: bool = False):
     logger.info(f"Validando ID {bank_id}.")
     if bank_id:
         if not ObjectId.is_valid(bank_id):
@@ -19,7 +19,8 @@ def get_banks(bank_id: str = None):
     result = list(db.find({"_id":ObjectId(bank_id)} if bank_id else None))
     if not result:
         return False, messages.ERR_BANK_NOT_FOUND
-    banks = [BankDB(**bank) for bank in result]
+    banks = [BankDB(**bank) for bank in result] if not as_dict \
+        else [BankDB(**bank).model_dump() for bank in result]
     return True, banks if len(banks) != 1 else banks[0]
 
 
