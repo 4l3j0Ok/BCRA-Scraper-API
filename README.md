@@ -24,3 +24,5 @@ Además, al estar crada con FastAPI, la documentación de la API está creada au
 Accede a la aplicación en Render:
 
 [![Static Badge](https://img.shields.io/badge/BCRA%20SCRAPER%20API-%F0%9F%94%97-black?style=for-the-badge&logo=render)](https://bcra-scraper-api.onrender.com/)
+
+(Puede tardar si es la primera vez que se accede en mucho tiempo.)
