@@ -18,3 +18,9 @@ API creada con FastAPI que utiliza scraping para obtener la lista de bancos ofic
 Mediante la API se podrá administrar la lista de bancos obtenidos y guardados en la base de datos.
 
 Además, al estar crada con FastAPI, la documentación de la API está creada automáticamente y se puede acceder mediante el path `/docs` (Swagger UI) o `/redoc` (ReDoc).
+
+## Accede a la API
+
+Accede a la aplicación en Render:
+
+[![Static Badge](https://img.shields.io/badge/BCRA%20SCRAPER%20API-%F0%9F%94%97-black?style=for-the-badge&logo=render)](https://bcra-scraper-api.onrender.com/)
