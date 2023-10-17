@@ -21,12 +21,11 @@ Además, al estar crada con FastAPI, la documentación de la API está creada au
 
 ## Accede a la API
 
-Accede a la aplicación en Render:
+Accede a la aplicación en Railway o en Render:
 
 <div align=center>
  
-[![Static Badge](https://img.shields.io/badge/BCRA%20SCRAPER%20API-%F0%9F%94%97-black?style=for-the-badge&logo=render)](https://bcra-scraper-api.onrender.com/)  [![Static Badge](https://img.shields.io/badge/Railway-%F0%9F%94%97-black?style=for-the-badge&logo=railway)
-](https://bcra-scraper-api.up.railway.app/)
+[![Static Badge](https://img.shields.io/badge/BCRA%20Scraper%20API-%F0%9F%94%97-black?style=for-the-badge&logo=railway)](https://bcra-scraper-api.up.railway.app/) [![Static Badge](https://img.shields.io/badge/BCRA%20SCRAPER%20API-%F0%9F%94%97-black?style=for-the-badge&logo=render)](https://bcra-scraper-api.onrender.com/) 
 
 </div>
 
