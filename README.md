@@ -7,7 +7,7 @@
 [![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)![Static Badge](https://img.shields.io/badge/3.11-blue?style=for-the-badge)](https://www.python.org/downloads/release/python-3114/) [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)![Static Badge](https://img.shields.io/badge/6.0-white?style=for-the-badge)](https://www.mongodb.com/docs/manual/release-notes/6.0/)
  [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white)](https://fastapi.tiangolo.com/) [![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/cb7bca4e391f4b1a953f233796628bab)](https://app.codacy.com/gh/4l3j0Ok/BCRA-Scraper-API/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/alejoide/bcra-scraper-api)](https://hub.docker.com/r/alejoide/bcra-scraper-api) [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/alejoide/bcra-scraper-api/1.0.0)](https://hub.docker.com/r/alejoide/bcra-scraper-api)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/cb7bca4e391f4b1a953f233796628bab)](https://app.codacy.com/gh/4l3j0Ok/BCRA-Scraper-API/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/alejoide/bcra-scraper-api)](https://hub.docker.com/r/alejoide/bcra-scraper-api) [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/alejoide/bcra-scraper-api)](https://hub.docker.com/r/alejoide/bcra-scraper-api)
 
 </div>
 
@@ -18,3 +18,15 @@ API creada con FastAPI que utiliza scraping para obtener la lista de bancos ofic
 Mediante la API se podrá administrar la lista de bancos obtenidos y guardados en la base de datos.
 
 Además, al estar crada con FastAPI, la documentación de la API está creada automáticamente y se puede acceder mediante el path `/docs` (Swagger UI) o `/redoc` (ReDoc).
+
+## Accede a la API
+
+Accede a la aplicación en Railway o en Render:
+
+<div align=center>
+ 
+[![Static Badge](https://img.shields.io/badge/BCRA%20Scraper%20API-%F0%9F%94%97-black?style=for-the-badge&logo=railway)](https://bcra-scraper-api.up.railway.app/) [![Static Badge](https://img.shields.io/badge/BCRA%20SCRAPER%20API-%F0%9F%94%97-black?style=for-the-badge&logo=render)](https://bcra-scraper-api.onrender.com/) 
+
+</div>
+
+(Render puede tardar si es la primera vez que se accede en mucho tiempo.)
