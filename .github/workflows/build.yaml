@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   build:
-    environment: ${{ env.ENVIRONMENT }}
+    environment: prod
     runs-on: ${{ secrets.RUNNER }}
     steps:
       - uses: actions/checkout@master
