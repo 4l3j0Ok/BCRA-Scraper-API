@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     environment: prod
-    runs-on: ${{ secrets.RUNNER }}
+    runs-on: prodesk
     steps:
       - uses: actions/checkout@master
       - name: Build and push to Docker Hub
