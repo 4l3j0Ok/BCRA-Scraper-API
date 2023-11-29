@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   build:
+    environment: ${{ env.ENVIRONMENT }}
     runs-on: ${{ secrets.RUNNER }}
     steps:
       - uses: actions/checkout@master
