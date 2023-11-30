@@ -1,0 +1,25 @@
+name: deploy
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  deploy:
+    name: Deploy to production
+    runs-on: prod
+    steps:
+    -
+      name: Checkout
+      uses: actions/checkout@master
+    -
+      name: Copy docker-compose.yaml
+      run: |
+        cp -f ./deploy/docker-compose.yaml ${{ PROJECT_PATH }}/docker-compose.yaml
+    -
+      name: Pull changes and restart
+      run: |
+        cd ${{ PROJECT_PATH }}
+        docker-compose down --remove-orphans
+        docker-compose pull
+        docker-compose up -d
