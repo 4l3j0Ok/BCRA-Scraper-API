@@ -23,6 +23,6 @@ jobs:
       name: Pull changes and restart
       run: |
         cd ${{ secrets.PROJECT_PATH }}
-        docker-compose down --remove-orphans
-        docker-compose pull
-        docker-compose up -d
+        docker compose down --remove-orphans
+        docker compose pull
+        docker compose up -d
