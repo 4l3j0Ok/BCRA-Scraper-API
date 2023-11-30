@@ -6,17 +6,20 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-
+    name: Deploy to production
+    runs-on: prod
     steps:
-      - name: Configurar clave SSH
-        uses: webfactory/ssh-agent@v0.8.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-      - name: Clonar repositorio
-        uses: actions/checkout@v2
-
-      - name: Desplegar a servidor
-        run: |
-          ssh ${{ secrets.PROD_USERNMAE }}@${{ secrets.PROD_HOST}} "cd ${{ secrets.PROD_APP_PATH }} && docker-compose down --remove-orphans && docker-compose pull && docker-compose up -d"
+    -
+      name: Checkout
+      uses: actions/checkout@master
+    -
+      name: Copy docker-compose.yaml
+      run: |
+        cp -f ./deploy/docker-compose.yaml ${{ PROJECT_PATH }}/docker-compose.yaml
+    -
+      name: Pull changes and restart
+      run: |
+        cd ${{ PROJECT_PATH }}
+        docker-compose down --remove-orphans
+        docker-compose pull
+        docker-compose up -d
