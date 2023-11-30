@@ -5,8 +5,9 @@ on:
       - "v*"
 jobs:
   build:
-    environment: prod
+    name: Build and push
     runs-on: prod
+    environment: prod
     steps:
       -
         name: Checkout
