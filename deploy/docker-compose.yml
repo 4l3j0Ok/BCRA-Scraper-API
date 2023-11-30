@@ -8,6 +8,8 @@ services:
       - mongo
     env_file:
       - .backend.env
+    networks:
+      - nginx-proxy
 
   mongo:
     image: mongo:6.0.8
@@ -16,3 +18,9 @@ services:
       - .mongo.env
     volumes:
       - ./data:/data/db
+
+
+# Only for production environments when using jwilder/nginx-proxy.
+networks:
+  nginx-proxy:
+    external: true
