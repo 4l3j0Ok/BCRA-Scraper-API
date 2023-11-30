@@ -16,11 +16,11 @@ jobs:
     -
       name: Copy docker-compose.yaml
       run: |
-        cp -f ./deploy/docker-compose.yaml ${{ PROJECT_PATH }}/docker-compose.yaml
+        cp -f ./deploy/docker-compose.yaml ${{ secrets.PROJECT_PATH }}/docker-compose.yaml
     -
       name: Pull changes and restart
       run: |
-        cd ${{ PROJECT_PATH }}
+        cd ${{ secrets.PROJECT_PATH }}
         docker-compose down --remove-orphans
         docker-compose pull
         docker-compose up -d
