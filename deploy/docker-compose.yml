@@ -13,7 +13,7 @@ services:
       - nginx-proxy
 
   mongo:
-    image: mongo:6.0.8
+    image: mongo:7.0.4
     restart: unless-stopped
     env_file:
       - .mongo.env
