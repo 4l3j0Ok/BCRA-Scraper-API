@@ -12,7 +12,7 @@ on:
 jobs:
   deploy:
     name: Deploy to production
-    runs-on: prod
+    runs-on: prodesk
     environment: prod
     steps:
     -

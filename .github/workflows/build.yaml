@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Build and push
-    runs-on: prod
+    runs-on: prodesk
     environment: prod
     steps:
       -
