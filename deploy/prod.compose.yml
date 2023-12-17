@@ -4,8 +4,6 @@ services:
   backend:
     image: alejoide/bcra-scraper-api:latest
     restart: unless-stopped
-    volumes:
-      - ./backend/src:/app/src
     env_file:
       - .backend.env
     networks:
