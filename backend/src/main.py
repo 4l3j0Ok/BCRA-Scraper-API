@@ -1,14 +1,14 @@
 from fastapi import FastAPI, responses
 import uvicorn
 import importlib
-from modules import config
+from modules import config, utils
 from modules.logger import logger
 
 
 app = FastAPI(
     title=config.APP_TITLE,
     description=config.APP_DESCRIPTION,
-    version=config.APP_VERSION
+    version=utils.get_latest_image_version()
 )
 
 

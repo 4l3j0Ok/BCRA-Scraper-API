@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+
+  backend:
+    image: alejoide/bcra-scraper-api:latest
+    ports:
+      - 8080:8080
+    restart: no
+    volumes:
+      - ../backend/src:/app/src
+    env_file:
+      - .backend.env
+    networks:
+      - mongo
+
+
+networks:
+  mongo:
+    external: true

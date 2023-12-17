@@ -22,7 +22,7 @@ jobs:
       name: Setting up Stack
       run: |
         mkdir -p $PROJECT_PATH
-        cp -f ./deploy/docker-compose.yml $PROJECT_PATH/docker-compose.yml
+        cp -f ./deploy/prod.compose.yml $PROJECT_PATH/docker-compose.yml
         echo "$BACKEND_ENV_CONTENT" > $PROJECT_PATH/.backend.env
         echo "$MONGO_ENV_CONTENT" > $PROJECT_PATH/.mongo.env
       env:
