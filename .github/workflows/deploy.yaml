@@ -8,6 +8,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "stack/**"
 
 jobs:
   deploy:
@@ -22,13 +24,11 @@ jobs:
       name: Setting up Stack
       run: |
         mkdir -p $PROJECT_PATH
-        cp -f ./deploy/prod.compose.yml $PROJECT_PATH/docker-compose.yml
-        echo "$BACKEND_ENV_CONTENT" > $PROJECT_PATH/.backend.env
-        echo "$MONGO_ENV_CONTENT" > $PROJECT_PATH/.mongo.env
+        cp -f ./stack/prod.compose.yml $PROJECT_PATH/docker-compose.yml
+        echo "$ENV_CONTENT" > $PROJECT_PATH/.backend.env
       env:
         PROJECT_PATH: ${{ secrets.PROJECT_PATH }}
-        BACKEND_ENV_CONTENT: ${{ secrets.BACKEND_ENV_CONTENT }}
-        MONGO_ENV_CONTENT: ${{ secrets.MONGO_ENV_CONTENT }}
+        ENV_CONTENT: ${{ secrets.ENV_CONTENT }}
     -
       name: Pull changes and restart
       run: |
