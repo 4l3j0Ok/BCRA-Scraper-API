@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  BCRA-Scraper-API:
+    image: alejoide/bcra-scraper-api:latest
+    container_name: bcra-scraper-api
+    build:
+      context: ../src/
+      dockerfile: ../src/Dockerfile
+    volumes:
+      - ../src:/app/src
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    networks:
+      - mongo
+
+networks:
+  mongo:
+    external: true

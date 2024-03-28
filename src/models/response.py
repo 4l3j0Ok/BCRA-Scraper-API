@@ -8,12 +8,10 @@ class Detail(TypedDict):
 
 
 class Success(BaseModel):
-    input: str | int | dict | None
     detail: Detail
 
 
 class Failed(BaseModel):
-    input: str | int | dict | None
     detail: Detail
 
 
