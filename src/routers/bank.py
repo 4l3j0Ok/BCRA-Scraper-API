@@ -50,7 +50,6 @@ async def update_banks_list(credentials: AdminCredentials) -> Success:
             )
         )
     return Success(
-        input=None,
         detail=Detail(
             payload={"ids": result},
             message=messages.MSG_SUCCESS_SAVE
@@ -79,7 +78,6 @@ def add_bank(bank: Bank, credentials: AdminCredentials) -> Success:
             )
         )
     return Success(
-        input=None,
         detail=Detail(
             payload={"id": result},
             message=messages.MSG_SUCCESS_SAVE
