@@ -1,18 +1,13 @@
 version: "3.9"
 services:
-
-  backend:
+  BCRA-Scraper-API:
     image: alejoide/bcra-scraper-api:latest
     restart: unless-stopped
     env_file:
       - .env
     networks:
       - mongo
-      - nginx-proxy
 
-# Only for production environments when using jwilder/nginx-proxy.
 networks:
-  nginx-proxy:
-    external: true
   mongo:
     external: true

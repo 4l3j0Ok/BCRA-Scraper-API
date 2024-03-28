@@ -1,6 +1,6 @@
-from fastapi import FastAPI, responses
-import uvicorn
 import importlib
+import uvicorn
+from fastapi import FastAPI, responses
 from modules import config, utils
 from modules.logger import logger
 
