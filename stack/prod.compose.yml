@@ -2,6 +2,7 @@ version: "3.9"
 services:
   BCRA-Scraper-API:
     image: alejoide/bcra-scraper-api:latest
+    container_name: bcra-scraper-api
     restart: unless-stopped
     env_file:
       - .env
