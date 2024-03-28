@@ -8,7 +8,11 @@ services:
       - .env
     networks:
       - mongo
+      - nginx-proxy
 
 networks:
   mongo:
+    external: true
+  nginx-proxy:
+    name: nginx-proxy
     external: true
