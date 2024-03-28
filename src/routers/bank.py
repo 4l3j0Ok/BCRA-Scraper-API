@@ -9,9 +9,9 @@ router = APIRouter()
 
 
 @router.get("/")
-async def get(bank_id: str = None) -> Success:
+async def get(bcra_id: str = None) -> Success:
     "Retorna la lista de bancos o un usuario concreto en base al id."
-    success, result = functions.get_banks(bank_id, as_dict=True)
+    success, result = functions.get_banks(bcra_id, as_dict=True)
     if not success:
         raise HTTPException(
             status_code=404,
@@ -21,7 +21,6 @@ async def get(bank_id: str = None) -> Success:
             )
         )
     return Success(
-        input=bank_id if bank_id else None,
         detail=Detail(
             payload=result,
             message=messages.MSG_SUCCESS_GENERIC
@@ -51,7 +50,7 @@ async def update_banks_list(credentials: AdminCredentials) -> Success:
         )
     return Success(
         detail=Detail(
-            payload={"ids": result},
+            payload=None,
             message=messages.MSG_SUCCESS_SAVE
         )
     )
@@ -79,7 +78,7 @@ def add_bank(bank: Bank, credentials: AdminCredentials) -> Success:
         )
     return Success(
         detail=Detail(
-            payload={"id": result},
+            payload=None,
             message=messages.MSG_SUCCESS_SAVE
         )
     )
