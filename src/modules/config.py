@@ -21,3 +21,6 @@ LOG_PATH = "/var/log/app.log"
 
 APP_TITLE = "BCRA Scraper API"
 APP_DESCRIPTION = "API de bancos."
+
+ADMIN_USER = os.getenv("ADMIN_USER")
+ADMIN_PASS = os.getenv("ADMIN_PASS")
