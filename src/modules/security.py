@@ -1,8 +1,7 @@
 import secrets
-from fastapi import Depends, HTTPException, status
+from fastapi import Depends
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from typing import Annotated
-from modules.logger import logger
 from modules import config
 
 

@@ -32,5 +32,5 @@ def update_banks():
 
 def add_bank(bank):
     logger.info("Agregando un nuevo banco...")
-    result = db.insert_one(bank.dict())
+    db.insert_one(bank.dict())
     return True, messages.MSG_SUCCESS_SAVE

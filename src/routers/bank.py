@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends, HTTPException, status
+from fastapi import APIRouter, HTTPException, Depends, status
 from typing import Annotated
 import modules.bank as functions
 from models.response import Success, Detail
