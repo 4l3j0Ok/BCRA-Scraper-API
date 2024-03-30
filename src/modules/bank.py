@@ -2,7 +2,6 @@ from modules import soup, messages, config
 from modules.logger import logger
 from models.bank import Bank
 from db.client import client
-import os
 
 
 db = client.bcra_scraper.banks
@@ -35,11 +34,3 @@ def add_bank(bank):
     logger.info("Agregando un nuevo banco...")
     result = db.insert_one(bank.dict())
     return True, messages.MSG_SUCCESS_SAVE
-
-
-def validate_admin(credentials):
-    if not credentials.username == os.getenv("ADMIN_USER"):
-        return False
-    if not credentials.password == os.getenv("ADMIN_PASS"):
-        return False
-    return True

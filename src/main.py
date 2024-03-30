@@ -32,7 +32,7 @@ async def home() -> responses.RedirectResponse:
 @app.get("/alive", tags=["Main"])
 async def alive() -> str:
     "Chequea si la aplicación está viva."
-    return "Estoy vivo!"
+    return "BCRA Scraper API se encuentra funcionando."
 
 
 if __name__ == "__main__":
